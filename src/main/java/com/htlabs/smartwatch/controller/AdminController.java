@@ -173,4 +173,41 @@ public class AdminController extends BaseController{
     }
 
 
+    @ApiOperation(value = "delete operator")
+    @PostMapping(path = "/deleteOperator",produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseOperatorDTO deleteOperator(@RequestParam String operatorId)
+    {
+         String message=operatorService.deleteOperator(operatorId);
+        return new ResponseOperatorDTO(HttpStatus.OK.value(),message);
+    }
+
+
+    @ApiOperation(value = "fetching all operators")
+    @GetMapping(path = "/getAllOperators",produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<OperatorDetailsDTO>getAllOperators(){
+
+        return operatorService.getAllOperators();
+
+    }
+
+
+
+    @ApiOperation(value = "fetching operator by operatorId")
+    @GetMapping(path = "/getOperatorById",produces = {MediaType.APPLICATION_JSON_VALUE})
+    public OperatorDetailsDTO getOperatorById(@RequestParam String operatorId)
+    {
+
+        return operatorService.getOperator(operatorId);
+      
+
+    }
+
+
+
+
+
+
+
+
+
 }

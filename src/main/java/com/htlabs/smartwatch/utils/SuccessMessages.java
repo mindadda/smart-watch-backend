@@ -13,4 +13,6 @@ public class SuccessMessages {
 
     public static final String OPERATOR_UPDATED_SUCCESSFULLY = "Operator updated successfully!";
 
+    public static final String OPERATOR_REMOVED = "Operator Removed Successfully !!";
+
 }

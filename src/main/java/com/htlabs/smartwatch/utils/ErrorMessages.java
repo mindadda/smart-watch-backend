@@ -22,4 +22,9 @@ public class ErrorMessages {
     public static final String INVALID_COUNTRY = "Country not Present";
 
     public static final String COUNTRY_EXIST = "Country Already existed!";
+
+    public static final String INVALID_OPERATORID = "Operator does not exist!";
+
+    public static final String OPERATOR_NOTFOUND = "Operator not found!";
+
 }
