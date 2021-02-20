@@ -4,6 +4,7 @@ import com.htlabs.smartwatch.dto.*;
 import com.htlabs.smartwatch.exceptions.UserException;
 import com.htlabs.smartwatch.service.CountryService;
 import com.htlabs.smartwatch.service.OperatorService;
+import com.htlabs.smartwatch.service.RegionService;
 import com.htlabs.smartwatch.service.UserService;
 import com.htlabs.smartwatch.utils.ErrorMessages;
 import com.htlabs.smartwatch.utils.Roles;
@@ -39,6 +40,9 @@ public class AdminController extends BaseController{
 
     @Autowired
     private OperatorService operatorService;
+
+    @Autowired
+    private RegionService regionService;
 
     @ApiOperation(value = "Create a user on signup. And the roles is assigned based on the path variable 'role'." +
             " Roles available currently "
@@ -198,12 +202,29 @@ public class AdminController extends BaseController{
     {
 
         return operatorService.getOperator(operatorId);
-      
+
 
     }
 
 
+    @ApiOperation(value = "creating region")
+    @PostMapping(path = "/createRegion",produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseDTO createRegion(@RequestParam String regionName,
+                                    @RequestParam String countryId)
+    {
+        String regionId=regionService.createRegion(regionName,countryId);
 
+        return new ResponseDTO(HttpStatus.OK.value(),regionId);
+
+    }
+
+
+    @ApiOperation(value = "fetching all regions")
+    @GetMapping(path = "/getAllregion",produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<RegionDetailsDTO>getAllRegion()
+    {
+        return regionService.getAllRegions();
+    }
 
 
 

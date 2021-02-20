@@ -23,16 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb9d5eff-8e8c-43ad-b047-fd730e28e8aa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/dto/RegionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/dto/RegionDetailsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/entity/RegionDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/entity/converter/RegionConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/RegionDetailRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/RegionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/dto/OperatorDetailsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/dto/OperatorDetailsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/OperatorDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/OperatorDetailRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/OperatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/OperatorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/OperatorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/OperatorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/utils/ErrorMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/utils/ErrorMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/utils/SuccessMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/utils/SuccessMessages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/htlabs/smartwatch/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/htlabs/smartwatch/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/htlabs/smartwatch/utils/ErrorMessages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/htlabs/smartwatch/utils/ErrorMessages.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,12 +137,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java</url>
-          <line>107</line>
+          <line>111</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java</url>
-          <line>108</line>
+          <line>112</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -187,12 +187,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java</url>
-          <line>115</line>
+          <line>119</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java</url>
-          <line>116</line>
+          <line>120</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
