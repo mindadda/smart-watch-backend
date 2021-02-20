@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,5 +19,7 @@ public class UserDetailsDTO {
     private String email;
 
     private String phoneNo;
+
+    private String password;
 
 }

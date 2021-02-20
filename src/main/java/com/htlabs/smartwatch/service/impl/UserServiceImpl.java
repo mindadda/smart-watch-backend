@@ -6,6 +6,7 @@ import com.htlabs.smartwatch.entity.converter.UserConverter;
 import com.htlabs.smartwatch.exceptions.UserException;
 import com.htlabs.smartwatch.repository.UserDetailRepository;
 import com.htlabs.smartwatch.service.UserService;
+import com.htlabs.smartwatch.utils.EncryptionUtils;
 import com.htlabs.smartwatch.utils.ErrorMessages;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,7 @@ public class UserServiceImpl implements UserService {
         UserConverter.getUserDetailEntityFromDto(dto, userDetail);
         userDetail.setUserId(UUID.randomUUID().toString());
         userDetail.setRole(roleString);
+        userDetail.setPassword(EncryptionUtils.encrypt(dto.getPassword()));
 //        if (!roleString.equals(Roles.USER.name()))
         userDetail.setCreatedAt(new Date());
         userDetail.setUpdatedAt(new Date());

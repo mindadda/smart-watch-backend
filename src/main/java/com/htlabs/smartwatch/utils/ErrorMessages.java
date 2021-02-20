@@ -2,7 +2,6 @@ package com.htlabs.smartwatch.utils;
 
 public class ErrorMessages {
 
-
     private ErrorMessages() {
     }
 
@@ -20,5 +19,7 @@ public class ErrorMessages {
 
     public static final String INVALID_CREDENTIALS = "Invalid credentials!";
 
+    public static final String INVALID_COUNTRY = "Country not Present";
 
+    public static final String COUNTRY_EXIST = "Country Already existed!";
 }

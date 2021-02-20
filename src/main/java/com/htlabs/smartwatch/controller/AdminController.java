@@ -1,11 +1,15 @@
 package com.htlabs.smartwatch.controller;
 
+import com.htlabs.smartwatch.dto.CountryDTO;
+import com.htlabs.smartwatch.dto.ResponseDTO;
 import com.htlabs.smartwatch.dto.ResponseUserIdDTO;
 import com.htlabs.smartwatch.dto.UserDetailsDTO;
 import com.htlabs.smartwatch.exceptions.UserException;
+import com.htlabs.smartwatch.service.CountryService;
 import com.htlabs.smartwatch.service.UserService;
 import com.htlabs.smartwatch.utils.ErrorMessages;
 import com.htlabs.smartwatch.utils.Roles;
+import com.htlabs.smartwatch.utils.SuccessMessages;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -32,6 +36,9 @@ public class AdminController extends BaseController{
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private CountryService countryService;
+
     @ApiOperation(value = "Create a user on signup. And the roles is assigned based on the path variable 'role'." +
             " Roles available currently "
             + ": {ADMIN, USER}. Value should  be used in smallcases in the URL")
@@ -39,7 +46,8 @@ public class AdminController extends BaseController{
     public ResponseUserIdDTO signUpUser(@PathVariable String role,
                                         @RequestParam String name,
                                         @RequestParam String email,
-                                        @RequestParam String phoneNo)
+                                        @RequestParam String phoneNo,
+                                        @RequestParam String password)
             throws UserException {
         try {
 
@@ -50,6 +58,7 @@ public class AdminController extends BaseController{
             dto.setName(name);
             dto.setEmail(email);
             dto.setPhoneNo(phoneNo);
+            dto.setPassword(password);
 
             String userId = userService.createUser(dto, roleString);
             return new ResponseUserIdDTO(HttpStatus.OK.value(), userId);
@@ -91,4 +100,46 @@ public class AdminController extends BaseController{
     public UserDetailsDTO getUserDetailsById(@RequestParam String userId) {
         return userService.getUserDetailsById(userId);
     }
+
+    @ApiOperation(value = "We can create a new Country.")
+    @PostMapping(path = "/createCountry", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseDTO createCountry(@RequestParam String countryName ) {
+        countryService.createCountry(countryName);
+        return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.COUNTRY_CREATED, countryName));
+    }
+
+    @ApiOperation(value = "We can update details of the Country.")
+    @PostMapping(path = "/updateCountry" , produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseDTO updateCountry(@RequestParam String countryId ,
+                                     @RequestParam String countryName){
+        countryService.updateCountry(countryId , countryName);
+        return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.COUNTRY_UPDATED, countryName));
+    }
+
+    @ApiOperation(value = "Get details of Country")
+    @GetMapping(path = "/findAllCountries", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public List<CountryDTO> getAllCountries() {
+        return countryService.getAllCountries();
+    }
+
+    @ApiOperation(value = "We can find details of the Country.")
+    @GetMapping(path = "/findCountryById", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public CountryDTO getCountryById(@RequestParam String countryId) {
+        return countryService.getCountryById(countryId);
+    }
+
+    @ApiOperation(value = "We can find details of the Country.")
+    @GetMapping(path = "/findCountryByName", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public List<CountryDTO> getCountryByName(@RequestParam String countryName) {
+        return countryService.getCountryByName(countryName);
+    }
+
+    @ApiOperation(value = "Delete country countryId")
+    @GetMapping(path = "/deleteCountry",produces ={MediaType.APPLICATION_JSON_VALUE} )
+    public ResponseDTO deleteCountry(@RequestParam String countryId ){
+        countryService.deleteCountry(countryId);
+        return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.COUNTRY_REMOVED));
+
+    }
+
 }
