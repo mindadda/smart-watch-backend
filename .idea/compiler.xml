@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mindaddaapplication" />
         <module name="SmartWatch" />
+        <module name="smart-watch-backend" />
       </profile>
     </annotationProcessing>
   </component>
@@ -15,6 +16,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SmartWatch" options="-parameters" />
       <module name="mindaddaapplication" options="-parameters" />
+      <module name="smart-watch-backend" options="-parameters" />
     </option>
   </component>
 </project>

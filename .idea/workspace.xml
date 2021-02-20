@@ -22,7 +22,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb9d5eff-8e8c-43ad-b047-fd730e28e8aa" name="Default Changelist" comment="" />
+    <list default="true" id="bb9d5eff-8e8c-43ad-b047-fd730e28e8aa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/utils/SuccessMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/utils/SuccessMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/htlabs/smartwatch/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/htlabs/smartwatch/controller/AdminController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,13 +56,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Users\POOJA\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -65,7 +67,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -84,17 +86,11 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="SmartWatchApplication" type="Application" factoryName="Application">
+    <configuration name="smartWatchApplication" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.htlabs.smartwatch.SmartWatchApplication" />
-      <module name="SmartWatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mindadda.web.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <module name="smart-watch-backend" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,83 +130,17 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613198709209">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1613198709209" />
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1613663913930">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1613663913930" />
-    <state x="419" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1613198556131">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="419" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1613198556131" />
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1613197020454">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1613197020454" />
-    <state width="1323" height="298" key="GridCell.Tab.0.bottom" timestamp="1613797431674">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1613797431674" />
-    <state width="1323" height="298" key="GridCell.Tab.0.center" timestamp="1613797431673">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1613797431673" />
-    <state width="1323" height="298" key="GridCell.Tab.0.left" timestamp="1613797431672">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1613797431672" />
-    <state width="1323" height="298" key="GridCell.Tab.0.right" timestamp="1613797431673">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1613797431673" />
-    <state width="1323" height="249" key="GridCell.Tab.1.bottom" timestamp="1613744135487">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1613744135487" />
-    <state width="1323" height="249" key="GridCell.Tab.1.center" timestamp="1613744135487">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1613744135487" />
-    <state width="1323" height="249" key="GridCell.Tab.1.left" timestamp="1613744135486">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1613744135486" />
-    <state width="1323" height="249" key="GridCell.Tab.1.right" timestamp="1613744135487">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1613744135487" />
-    <state x="213" y="19" key="Maven.ArtifactSearchDialog" timestamp="1613199468408">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="213" y="19" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1613199468408" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1613199182751">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1613199182751" />
-    <state x="230" y="99" width="906" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1613199241645">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="230" y="99" width="906" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1613199241645" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1613664430990">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1613664430990" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java</url>
-          <line>106</line>
+          <line>107</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java</url>
-          <line>107</line>
+          <line>108</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -255,12 +185,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java</url>
-          <line>114</line>
+          <line>115</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/AdminController.java</url>
-          <line>115</line>
+          <line>116</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

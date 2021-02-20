@@ -11,4 +11,6 @@ public class SuccessMessages {
 
     public static final String COUNTRY_REMOVED = "Country Removed Successfully !!";
 
+    public static final String OPERATOR_UPDATED_SUCCESSFULLY = "Operator updated successfully!";
+
 }

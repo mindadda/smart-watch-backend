@@ -1,11 +1,9 @@
 package com.htlabs.smartwatch.controller;
 
-import com.htlabs.smartwatch.dto.CountryDTO;
-import com.htlabs.smartwatch.dto.ResponseDTO;
-import com.htlabs.smartwatch.dto.ResponseUserIdDTO;
-import com.htlabs.smartwatch.dto.UserDetailsDTO;
+import com.htlabs.smartwatch.dto.*;
 import com.htlabs.smartwatch.exceptions.UserException;
 import com.htlabs.smartwatch.service.CountryService;
+import com.htlabs.smartwatch.service.OperatorService;
 import com.htlabs.smartwatch.service.UserService;
 import com.htlabs.smartwatch.utils.ErrorMessages;
 import com.htlabs.smartwatch.utils.Roles;
@@ -38,6 +36,9 @@ public class AdminController extends BaseController{
 
     @Autowired
     private CountryService countryService;
+
+    @Autowired
+    private OperatorService operatorService;
 
     @ApiOperation(value = "Create a user on signup. And the roles is assigned based on the path variable 'role'." +
             " Roles available currently "
@@ -141,5 +142,35 @@ public class AdminController extends BaseController{
         return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.COUNTRY_REMOVED));
 
     }
+
+
+    @ApiOperation(value = "we can create operator")
+    @PostMapping(path = "/createNewOperator",produces ={MediaType.APPLICATION_JSON_VALUE} )
+    public ResponseOperatorDTO addOperator(@RequestParam String operatorName){
+
+        OperatorDetailsDTO dto=new OperatorDetailsDTO();
+
+        dto.setOperatorName(operatorName);
+
+        String operatorId=operatorService.createOperator(dto);
+
+        return new ResponseOperatorDTO(HttpStatus.OK.value(), operatorId);
+
+    }
+
+
+    @ApiOperation(value="we can update operator")
+    @PostMapping(path = "/updateOperator",produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseOperatorDTO modifyOperator(@RequestParam String operatorId,
+                                              @RequestParam String operatorName)
+    {
+        OperatorDetailsDTO dto = new OperatorDetailsDTO();
+
+        dto.setOperatorId(operatorId);
+        dto.setOperatorName(operatorName);
+        operatorService.updateOperator(dto);
+        return new ResponseOperatorDTO(HttpStatus.OK.value(), SuccessMessages.OPERATOR_UPDATED_SUCCESSFULLY);
+    }
+
 
 }
