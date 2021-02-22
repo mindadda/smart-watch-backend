@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 
 import java.util.List;
 
+@SuppressWarnings("serial")
 public class CountryConverter {
 
     public static List<CountryDTO> getCountryDTOListFromEntityList(List<Country> countries) {

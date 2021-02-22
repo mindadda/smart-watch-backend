@@ -7,7 +7,15 @@ import java.util.List;
 
 public interface RegionService {
 
-    public String createRegion(String regionName,String countryId);
+    public void createRegion(String countryId , String regionName);
+
+    public void updateRegion(String regionId, String regionName);
 
     public List<RegionDetailsDTO> getAllRegions();
+
+    public RegionDetailsDTO getRegionById(String regionId);
+
+    public List<RegionDetailsDTO> getRegionByName(String regionName);
+
+    public void deleteRegion(String regionId);
 }

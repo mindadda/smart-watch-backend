@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name = "region")
-public class RegionDetails {
+public class RegionDetails extends AuditEntity{
 
     @Id
     @Column(name = "region_id")
