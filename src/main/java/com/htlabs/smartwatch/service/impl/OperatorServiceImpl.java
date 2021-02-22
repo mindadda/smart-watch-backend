@@ -1,19 +1,16 @@
 package com.htlabs.smartwatch.service.impl;
 
 import com.htlabs.smartwatch.dto.OperatorDetailsDTO;
-import com.htlabs.smartwatch.dto.ResponseOperatorDTO;
-import com.htlabs.smartwatch.entity.Country;
 import com.htlabs.smartwatch.entity.OperatorDetails;
-import com.htlabs.smartwatch.entity.converter.CountryConverter;
 import com.htlabs.smartwatch.entity.converter.OperatorConverter;
 import com.htlabs.smartwatch.repository.OperatorDetailRepository;
 import com.htlabs.smartwatch.service.OperatorService;
 import com.htlabs.smartwatch.utils.ErrorMessages;
-import com.htlabs.smartwatch.utils.SuccessMessages;
-import com.mysql.cj.x.protobuf.MysqlxExpr;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Date;
 import java.util.List;
@@ -26,88 +23,74 @@ public class OperatorServiceImpl implements OperatorService {
     @Autowired
     private OperatorDetailRepository operatorDetailRepository;
 
-
     @Override
-
-    public String createOperator(OperatorDetailsDTO dto){
-
-        OperatorDetails operatorDetails=new OperatorDetails();
-
-        log.info("Creating Operator");
-
-        OperatorConverter.getOpratorDetailsEntityFromDto(dto,operatorDetails);
-
-        operatorDetails.setOperatorId(UUID.randomUUID().toString());
-
-        operatorDetailRepository.save(operatorDetails);
-
-        return operatorDetails.getOperatorId();
-
-    }
-
-
-    @Override
-
-    public void updateOperator(OperatorDetailsDTO dto){
-
-
-        OperatorDetails operatorDetails=new OperatorDetails();
-
-        operatorDetails=operatorDetailRepository.findByoperatorId(dto.getOperatorId());
-
-        if(operatorDetails!=null)
-        {
-            OperatorConverter.getOpratorDetailsEntityFromDto(dto,operatorDetails);
+    public void createOperator(String operatorName) {
+        String opertorname = operatorDetailRepository.findOperatorName(operatorName);
+        if (opertorname == null){
+            log.info("Creating Operator:  {}", operatorName);
+            String operatorId = UUID.randomUUID().toString();
+            OperatorDetails operatorDetails = new OperatorDetails(operatorId, operatorName);
+            operatorDetails.setCreatedAt(new Date());
             operatorDetails.setUpdatedAt(new Date());
-
             operatorDetailRepository.save(operatorDetails);
-
         }
-
+        else{
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.OPERATOR_EXIST);
+        }
     }
 
+    @Override
+    public void updateOperator(String operatorId, String operatorName) {
+        OperatorDetails operatorDetails = operatorDetailRepository.findById(operatorId).orElse(null);
+        if (operatorDetails == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_OPERATOR);
+        } else {
+            String operatorname = operatorDetailRepository.findOperatorName(operatorName);
+            if (operatorname == null) {
+                log.info("Updating Operator:  {}", operatorName);
+                operatorDetails.setOperatorName(operatorName);
+                operatorDetails.setUpdatedAt(new Date());
+                operatorDetailRepository.save(operatorDetails);
+            } else {
+                throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.COUNTRY_EXIST);
+            }
 
+        }
+    }
 
     @Override
-    public String deleteOperator(String operatorId){
-        OperatorDetails operatorDetails=new OperatorDetails();
-        operatorDetails=operatorDetailRepository.findByoperatorId(operatorId);
+    public List<OperatorDetailsDTO> getOperatorByName(String operatorName) {
+        List<OperatorDetails> operatorDetails = operatorDetailRepository.findByName(operatorName);
+        if (operatorDetails == null){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_OPERATOR);
+        }
+        return OperatorConverter.getOperatorDetailsDTOListFromEntityList(operatorDetails);
+    }
 
-        if(operatorDetails!=null)
-        {
-            operatorDetailRepository.deleteOperator(operatorId);
-            log.info("deletion success");
-            return SuccessMessages.OPERATOR_REMOVED;
+    @Override
+    public void deleteOperator(String operatorId){
+        log.info("Deleting Operator : {}",operatorId);
+        OperatorDetails operatorDetails = operatorDetailRepository.findById(operatorId).orElse(null);
+        if (operatorDetails == null){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_OPERATOR);
         }
-        else
-        {
-            return ErrorMessages.INVALID_OPERATORID;
-        }
+        operatorDetailRepository.deleteOperator(operatorId);
     }
 
 
     @Override
     public List<OperatorDetailsDTO> getAllOperators(){
-
         log.info("Retrieving all the Operators.");
         List<OperatorDetails> operatorDetails = operatorDetailRepository.findAll();
-        return OperatorConverter.getListOperatorDetailsDtoFromEntityList(operatorDetails);
+        return OperatorConverter.getOperatorDetailsDTOListFromEntityList(operatorDetails);
     }
 
 
     @Override
-    public OperatorDetailsDTO getOperator(String operatorId){
-
-        OperatorDetails operatorDetails=new OperatorDetails();
-
-        operatorDetails=operatorDetailRepository.findById(operatorId).orElse(null);
-
-
-            return OperatorConverter.getOPeratorDetailDtoFromEntity(operatorDetails);
-
-
+    public OperatorDetailsDTO getOperatorById(String operatorId){
+        log.info("Retrieving the Operator Details : {}", operatorId);
+        OperatorDetails operatorDetails = operatorDetailRepository.findById(operatorId).orElse(null);
+        return OperatorConverter.getOperatorDetailsDtoFromEntity(operatorDetails);
     }
-
-
 
 }

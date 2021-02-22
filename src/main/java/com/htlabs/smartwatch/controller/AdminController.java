@@ -2,10 +2,7 @@ package com.htlabs.smartwatch.controller;
 
 import com.htlabs.smartwatch.dto.*;
 import com.htlabs.smartwatch.exceptions.UserException;
-import com.htlabs.smartwatch.service.CountryService;
-import com.htlabs.smartwatch.service.OperatorService;
-import com.htlabs.smartwatch.service.RegionService;
-import com.htlabs.smartwatch.service.UserService;
+import com.htlabs.smartwatch.service.*;
 import com.htlabs.smartwatch.utils.ErrorMessages;
 import com.htlabs.smartwatch.utils.Roles;
 import com.htlabs.smartwatch.utils.SuccessMessages;
@@ -34,15 +31,6 @@ public class AdminController extends BaseController{
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private CountryService countryService;
-
-    @Autowired
-    private OperatorService operatorService;
-
-    @Autowired
-    private RegionService regionService;
 
     @ApiOperation(value = "Create a user on signup. And the roles is assigned based on the path variable 'role'." +
             " Roles available currently "
@@ -105,130 +93,5 @@ public class AdminController extends BaseController{
     public UserDetailsDTO getUserDetailsById(@RequestParam String userId) {
         return userService.getUserDetailsById(userId);
     }
-
-    @ApiOperation(value = "We can create a new Country.")
-    @PostMapping(path = "/createCountry", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public ResponseDTO createCountry(@RequestParam String countryName ) {
-        countryService.createCountry(countryName);
-        return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.COUNTRY_CREATED, countryName));
-    }
-
-    @ApiOperation(value = "We can update details of the Country.")
-    @PostMapping(path = "/updateCountry" , produces = { MediaType.APPLICATION_JSON_VALUE })
-    public ResponseDTO updateCountry(@RequestParam String countryId ,
-                                     @RequestParam String countryName){
-        countryService.updateCountry(countryId , countryName);
-        return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.COUNTRY_UPDATED, countryName));
-    }
-
-    @ApiOperation(value = "Get details of Country")
-    @GetMapping(path = "/findAllCountries", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public List<CountryDTO> getAllCountries() {
-        return countryService.getAllCountries();
-    }
-
-    @ApiOperation(value = "We can find details of the Country.")
-    @GetMapping(path = "/findCountryById", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public CountryDTO getCountryById(@RequestParam String countryId) {
-        return countryService.getCountryById(countryId);
-    }
-
-    @ApiOperation(value = "We can find details of the Country.")
-    @GetMapping(path = "/findCountryByName", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public List<CountryDTO> getCountryByName(@RequestParam String countryName) {
-        return countryService.getCountryByName(countryName);
-    }
-
-    @ApiOperation(value = "Delete country countryId")
-    @GetMapping(path = "/deleteCountry",produces ={MediaType.APPLICATION_JSON_VALUE} )
-    public ResponseDTO deleteCountry(@RequestParam String countryId ){
-        countryService.deleteCountry(countryId);
-        return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.COUNTRY_REMOVED));
-
-    }
-
-
-    @ApiOperation(value = "we can create operator")
-    @PostMapping(path = "/createNewOperator",produces ={MediaType.APPLICATION_JSON_VALUE} )
-    public ResponseOperatorDTO addOperator(@RequestParam String operatorName){
-
-        OperatorDetailsDTO dto=new OperatorDetailsDTO();
-
-        dto.setOperatorName(operatorName);
-
-        String operatorId=operatorService.createOperator(dto);
-
-        return new ResponseOperatorDTO(HttpStatus.OK.value(), operatorId);
-
-    }
-
-
-    @ApiOperation(value="we can update operator")
-    @PostMapping(path = "/updateOperator",produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseOperatorDTO modifyOperator(@RequestParam String operatorId,
-                                              @RequestParam String operatorName)
-    {
-        OperatorDetailsDTO dto = new OperatorDetailsDTO();
-
-        dto.setOperatorId(operatorId);
-        dto.setOperatorName(operatorName);
-        operatorService.updateOperator(dto);
-        return new ResponseOperatorDTO(HttpStatus.OK.value(), SuccessMessages.OPERATOR_UPDATED_SUCCESSFULLY);
-    }
-
-
-    @ApiOperation(value = "delete operator")
-    @PostMapping(path = "/deleteOperator",produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseOperatorDTO deleteOperator(@RequestParam String operatorId)
-    {
-         String message=operatorService.deleteOperator(operatorId);
-        return new ResponseOperatorDTO(HttpStatus.OK.value(),message);
-    }
-
-
-    @ApiOperation(value = "fetching all operators")
-    @GetMapping(path = "/getAllOperators",produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<OperatorDetailsDTO>getAllOperators(){
-
-        return operatorService.getAllOperators();
-
-    }
-
-
-
-    @ApiOperation(value = "fetching operator by operatorId")
-    @GetMapping(path = "/getOperatorById",produces = {MediaType.APPLICATION_JSON_VALUE})
-    public OperatorDetailsDTO getOperatorById(@RequestParam String operatorId)
-    {
-
-        return operatorService.getOperator(operatorId);
-
-
-    }
-
-
-    @ApiOperation(value = "creating region")
-    @PostMapping(path = "/createRegion",produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseDTO createRegion(@RequestParam String regionName,
-                                    @RequestParam String countryId)
-    {
-        String regionId=regionService.createRegion(regionName,countryId);
-
-        return new ResponseDTO(HttpStatus.OK.value(),regionId);
-
-    }
-
-
-    @ApiOperation(value = "fetching all regions")
-    @GetMapping(path = "/getAllregion",produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<RegionDetailsDTO>getAllRegion()
-    {
-        return regionService.getAllRegions();
-    }
-
-
-
-
-
 
 }

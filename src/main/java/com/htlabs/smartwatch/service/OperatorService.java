@@ -6,13 +6,16 @@ import java.util.List;
 
 public interface OperatorService {
 
-    public String createOperator(OperatorDetailsDTO dto);
+    public void createOperator(String operatorName);
 
-    public void updateOperator(OperatorDetailsDTO dto);
-
-    public String deleteOperator(String operatorId);
+    public void deleteOperator(String operatorId);
 
     public List<OperatorDetailsDTO> getAllOperators();
 
-    public OperatorDetailsDTO getOperator(String operatorId);
+    public OperatorDetailsDTO getOperatorById(String operatorId);
+
+    public void updateOperator(String operatorId, String operatorName);
+
+    public List<OperatorDetailsDTO> getOperatorByName(String operatorName);
+
 }

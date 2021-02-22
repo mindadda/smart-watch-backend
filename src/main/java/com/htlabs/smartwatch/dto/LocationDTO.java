@@ -9,16 +9,15 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
-public class RegionDetailsDTO {
+public class LocationDTO {
 
-    private String regionId;
+    private String locationId;
 
-    private String regionName;
+    private String locationName;
 
-    private CountryDTO country;
+    private RegionDetailsDTO region;
 
     private Date createdAt;
 
     private Date updatedAt;
-
 }

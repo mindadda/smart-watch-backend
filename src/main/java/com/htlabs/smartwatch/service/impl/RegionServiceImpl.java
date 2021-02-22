@@ -3,13 +3,17 @@ package com.htlabs.smartwatch.service.impl;
 import com.htlabs.smartwatch.dto.RegionDetailsDTO;
 import com.htlabs.smartwatch.entity.Country;
 import com.htlabs.smartwatch.entity.RegionDetails;
+import com.htlabs.smartwatch.entity.converter.CountryConverter;
 import com.htlabs.smartwatch.entity.converter.RegionConverter;
 import com.htlabs.smartwatch.repository.CountryRepository;
 import com.htlabs.smartwatch.repository.RegionDetailRepository;
 import com.htlabs.smartwatch.service.RegionService;
+import com.htlabs.smartwatch.utils.ErrorMessages;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Date;
 import java.util.List;
@@ -25,30 +29,81 @@ public class RegionServiceImpl implements RegionService {
     @Autowired
     private CountryRepository countryRepository;
 
+
     @Override
-    public String createRegion(String regionName,String countryId){
+    public void createRegion(String countryId , String regionName) {
+        Country country = countryRepository.findById(countryId).orElse(null);
+        if(country == null){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ErrorMessages.INVALID_COUNTRY);
+        }
 
-
-        Country country =countryRepository.findById(countryId).orElse(null);
-
-         String regionId= UUID.randomUUID().toString();
-
-         RegionDetails regionDetails=new RegionDetails(regionId,regionName);
-
-         regionDetails.setCountry(country);
-         /*regionDetails.setCreatedAt(new Date());*/
-         regionDetailRepository.save(regionDetails);
-         return regionId;
-
+        String regionname = regionDetailRepository.findRegionName(regionName);
+        if (regionname == null){
+            log.info("Creating Region:  {}", regionName);
+            String regionId = UUID.randomUUID().toString();
+            RegionDetails regionDetails = new RegionDetails(regionId, regionName);
+            regionDetails.setCountry(country);
+            regionDetails.setCreatedAt(new Date());
+            regionDetails.setUpdatedAt(new Date());
+            regionDetailRepository.save(regionDetails);
+        }
+        else{
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.REGION_EXIST);
+        }
     }
 
+    @Override
+    public void updateRegion(String regionId, String regionName) {
+        RegionDetails regionDetails = regionDetailRepository.findById(regionId).orElse(null);
+        if (regionDetails == null){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_REGION);
+        }
+        else {
+            String regionname = regionDetailRepository.findRegionName(regionName);
+            if (regionname == null){
+                log.info("Updating Region:  {}", regionName);
+                regionDetails.setRegionName(regionName);
+                regionDetails.setCreatedAt(new Date());
+                regionDetails.setUpdatedAt(new Date());
+                regionDetailRepository.save(regionDetails);
+            }
+            else{
+                throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.REGION_EXIST);
+            }
+
+        }
+    }
 
     @Override
-    public List<RegionDetailsDTO> getAllRegions(){
+    public List<RegionDetailsDTO> getAllRegions() {
+        log.info("Retrieving all the Regions.");
+        List<RegionDetails> regionDetails = regionDetailRepository.findAll();
+        return RegionConverter.getRegionDTOListFromEntityList(regionDetails);
+    }
 
-            List<RegionDetails>regionDetailsList=regionDetailRepository.findAll();
+    @Override
+    public RegionDetailsDTO getRegionById(String regionId) {
+        log.info("Retrieving the Regions Details : {}", regionId);
+        RegionDetails regionDetails = regionDetailRepository.findById(regionId).orElse(null);
+        return RegionConverter.getRegionDtoFromEntity(regionDetails);
+    }
 
-              return RegionConverter.getRegionDetailsDTOListFromEntityList(regionDetailsList);
+    @Override
+    public List<RegionDetailsDTO> getRegionByName(String regionName) {
+        List<RegionDetails> regionDetails = regionDetailRepository.findByName(regionName);
+        if (regionDetails == null){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_REGION);
+        }
+        return RegionConverter.getRegionDTOListFromEntityList(regionDetails);
+    }
 
+    @Override
+    public void deleteRegion(String regionId) {
+        log.info("Deleting Region : {}", regionId);
+        RegionDetails regionDetails = regionDetailRepository.findById(regionId).orElse(null);
+        if (regionDetails == null){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_REGION);
+        }
+        regionDetailRepository.deleteRegion(regionId);
     }
 }

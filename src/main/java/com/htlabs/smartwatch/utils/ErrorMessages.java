@@ -23,8 +23,17 @@ public class ErrorMessages {
 
     public static final String COUNTRY_EXIST = "Country Already existed!";
 
-    public static final String INVALID_OPERATORID = "Operator does not exist!";
+    public static final String REGION_EXIST = "Region Already existed!";
 
-    public static final String OPERATOR_NOTFOUND = "Operator not found!";
+    public static final String LOCATION_EXIST = "Location Already existed!";
+
+    public static final String INVALID_OPERATOR = "Operator does not exist!";
+
+    public static final String INVALID_REGION = "Region does not exist!";
+
+    public static final String OPERATOR_EXIST = "Operator Already existed!" ;
+
+    public static final String INVALID_LOCATION = "Location does not exist!";
+
 
 }
