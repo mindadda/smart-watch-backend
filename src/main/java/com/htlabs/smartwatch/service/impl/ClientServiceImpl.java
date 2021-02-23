@@ -4,10 +4,10 @@ import com.htlabs.smartwatch.dto.ClientDTO;
 
 import com.htlabs.smartwatch.entity.ClientDetails;
 
-import com.htlabs.smartwatch.entity.Country;
+
 import com.htlabs.smartwatch.entity.converter.ClientConverter;
 
-import com.htlabs.smartwatch.entity.converter.CountryConverter;
+
 import com.htlabs.smartwatch.repository.ClientDetailRepository;
 import com.htlabs.smartwatch.service.ClientService;
 
@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -39,7 +40,7 @@ public class ClientServiceImpl implements ClientService {
 
 
             log.info("Creating Client");
-             if (clientDetailRepository.findByClientPhone(dto.getClientPhoneNo())!=null)
+             if (clientDetailRepository.findByClientPhone(dto.getClientPhone())!=null)
                 throw new ResponseStatusException(HttpStatus.CONFLICT, ErrorMessages.PHONE_ALREADY_EXISTS);
 
              ClientConverter.getClientDetailsEntityFromDto(dto,clientDetails);
@@ -120,4 +121,19 @@ public class ClientServiceImpl implements ClientService {
           return ClientConverter.getClientDtoFromEntity(clientDetails);
 
    }
+
+
+
+   @Override
+    public ClientDTO getClientByName(String clientName){
+
+       log.info("Retrieving the client Details ");
+
+       ClientDetails clientDetails=  clientDetailRepository.findClientName(clientName);
+
+         return ClientConverter.getClientDTOFromEntity(clientDetails);
+
+
+   }
 }
+

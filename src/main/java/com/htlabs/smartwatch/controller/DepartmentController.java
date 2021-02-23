@@ -16,6 +16,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/dept")
 @Validated
@@ -36,7 +38,7 @@ public class DepartmentController extends BaseController {
 
         ClientDTO dto=new ClientDTO();
         dto.setClientName(name);
-        dto.setClientPhoneNo(phoneNo);
+        dto.setClientPhone(phoneNo);
         dto.setClientAddress(address);
 
         String clientName = clientService.createClient(dto);
@@ -77,6 +79,13 @@ public class DepartmentController extends BaseController {
         return clientService.getClientById(clientId);
     }
 
+
+    @ApiOperation(value = "fetching client by clientName")
+    @GetMapping(path = "/findClientByName",produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ClientDTO getClientByName(@RequestParam String clientName) {
+
+        return clientService.getClientByName(clientName);
+    }
 
 
 }

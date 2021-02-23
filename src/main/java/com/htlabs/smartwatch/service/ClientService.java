@@ -2,6 +2,8 @@ package com.htlabs.smartwatch.service;
 
 import com.htlabs.smartwatch.dto.ClientDTO;
 
+import java.util.List;
+
 public interface ClientService {
 
     public String createClient(ClientDTO dto);
@@ -11,4 +13,6 @@ public interface ClientService {
     public String deleteClient(String clientId);
 
     public ClientDTO getClientById(String clientId);
+
+    public ClientDTO getClientByName(String clientName);
 }

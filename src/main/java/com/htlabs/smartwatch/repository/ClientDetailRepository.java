@@ -8,12 +8,16 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 public interface ClientDetailRepository extends JpaRepository<ClientDetails,String> {
 
     //public UserDetails findByEmail(String email);
 
     public ClientDetails findByClientPhone(String clientPhone);
+
+
 
     @Modifying
     @Transactional
@@ -33,4 +37,8 @@ public interface ClientDetailRepository extends JpaRepository<ClientDetails,Stri
     @Transactional
     @Query(value = "DELETE FROM client where client_id = :#{#clientId}", nativeQuery = true)
     public void deleteClient(String clientId);
+
+
+    @Query(value = "SELECT * FROM client WHERE client_name LIKE %:clientName%", nativeQuery = true)
+    public ClientDetails findClientName(String clientName);
 }
