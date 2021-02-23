@@ -29,4 +29,7 @@ public class SuccessMessages {
 
     public static final String LOCATION_REMOVED = "Location Removed Successfully !!";
 
+    public static final String CLIENT_CREATED = "Client Created Successfully !!";
+
+    public static final String CLIENT_UPDATED = "Client updated Successfully !!";
 }
