@@ -5,9 +5,11 @@ import com.htlabs.smartwatch.dto.ClientDTO;
 import com.htlabs.smartwatch.entity.ClientDetails;
 
 
+import com.htlabs.smartwatch.entity.Country;
 import com.htlabs.smartwatch.entity.converter.ClientConverter;
 
 
+import com.htlabs.smartwatch.entity.converter.CountryConverter;
 import com.htlabs.smartwatch.repository.ClientDetailRepository;
 import com.htlabs.smartwatch.service.ClientService;
 
@@ -135,5 +137,12 @@ public class ClientServiceImpl implements ClientService {
 
 
    }
+
+    @Override
+    public List<ClientDTO> getAllClients() {
+        log.info("Retrieving all the Clients.");
+        List<ClientDetails> clients = clientDetailRepository.findAll();
+        return ClientConverter.getClientDTOListFromEntityList(clients);
+    }
 }
 

@@ -4,6 +4,7 @@ import com.google.common.reflect.TypeToken;
 import com.htlabs.smartwatch.dto.ClientDTO;
 
 
+import com.htlabs.smartwatch.dto.CountryDTO;
 import com.htlabs.smartwatch.dto.UserDetailsDTO;
 import com.htlabs.smartwatch.entity.ClientDetails;
 
@@ -12,6 +13,7 @@ import com.htlabs.smartwatch.entity.UserDetails;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 
+import java.util.List;
 
 
 public class ClientConverter {
@@ -63,6 +65,10 @@ public class ClientConverter {
         }.getType());
     }
 
+    public static List<ClientDTO> getClientDTOListFromEntityList(List<ClientDetails> clients) {
+        return new ModelMapper().map(clients, new TypeToken<List<ClientDTO>>() {
+        }.getType());
+    }
 }
 
 

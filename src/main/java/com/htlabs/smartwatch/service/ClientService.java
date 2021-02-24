@@ -15,4 +15,6 @@ public interface ClientService {
     public ClientDTO getClientById(String clientId);
 
     public ClientDTO getClientByName(String clientName);
+
+    public List<ClientDTO> getAllClients();
 }

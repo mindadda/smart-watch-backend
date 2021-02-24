@@ -46,9 +46,6 @@ public class DepartmentController extends BaseController {
 
     }
 
-
-
-
     @ApiOperation(value = "We can update details of the Client.")
     @PostMapping(path = "/updateClient" , produces = { MediaType.APPLICATION_JSON_VALUE })
     public ResponseClientDTO updateClient( @RequestParam String clientId ,
@@ -70,6 +67,11 @@ public class DepartmentController extends BaseController {
         return new ResponseDTO(HttpStatus.OK.value(), value);
     }
 
+    @ApiOperation(value = "Get details of Client")
+    @GetMapping(path = "/findAllClients", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public List<ClientDTO> getAllClients() {
+        return clientService.getAllClients();
+    }
 
 
     @ApiOperation(value = "fetching client by clientId")
