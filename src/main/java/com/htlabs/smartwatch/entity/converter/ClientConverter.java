@@ -1,11 +1,20 @@
 package com.htlabs.smartwatch.entity.converter;
 
+import com.google.common.reflect.TypeToken;
 import com.htlabs.smartwatch.dto.ClientDTO;
 
+
+import com.htlabs.smartwatch.dto.CountryDTO;
+import com.htlabs.smartwatch.dto.UserDetailsDTO;
 import com.htlabs.smartwatch.entity.ClientDetails;
 
+
+import com.htlabs.smartwatch.entity.UserDetails;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
+
+import java.util.List;
+
 
 public class ClientConverter {
 
@@ -30,7 +39,7 @@ public class ClientConverter {
     }
 
     private static ModelMapper getClientDtoMapperWithTypeMap() {
-        ModelMapper mapper = getClientDtoMapper();
+        ModelMapper mapper = getUserDtoMapper();
         mapper.typeMap(ClientDetails.class, ClientDTO.class).setPostConverter(context -> {
             return context.getDestination();
         });
@@ -38,7 +47,7 @@ public class ClientConverter {
         return mapper;
     }
 
-    private static ModelMapper getClientDtoMapper() {
+    private static ModelMapper getUserDtoMapper() {
 
         ModelMapper mapper = new ModelMapper();
         mapper.addMappings(new PropertyMap<ClientDetails, ClientDTO>() {
@@ -50,6 +59,16 @@ public class ClientConverter {
         return mapper;
     }
 
+
+    public static ClientDTO getClientDTOFromEntity(ClientDetails clientDetails) {
+        return new ModelMapper().map(clientDetails, new TypeToken<ClientDTO>() {
+        }.getType());
+    }
+
+    public static List<ClientDTO> getClientDTOListFromEntityList(List<ClientDetails> clients) {
+        return new ModelMapper().map(clients, new TypeToken<List<ClientDTO>>() {
+        }.getType());
+    }
 }
 
 
