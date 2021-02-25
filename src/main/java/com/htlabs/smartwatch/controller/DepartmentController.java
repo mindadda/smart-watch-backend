@@ -16,6 +16,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/dept")
 @Validated
@@ -36,16 +38,13 @@ public class DepartmentController extends BaseController {
 
         ClientDTO dto=new ClientDTO();
         dto.setClientName(name);
-        dto.setClientPhoneNo(phoneNo);
+        dto.setClientPhone(phoneNo);
         dto.setClientAddress(address);
 
         String clientName = clientService.createClient(dto);
         return new ResponseClientDTO(HttpStatus.OK.value(),String.format(SuccessMessages.CLIENT_CREATED), clientName);
 
     }
-
-
-
 
     @ApiOperation(value = "We can update details of the Client.")
     @PostMapping(path = "/updateClient" , produces = { MediaType.APPLICATION_JSON_VALUE })
@@ -68,6 +67,11 @@ public class DepartmentController extends BaseController {
         return new ResponseDTO(HttpStatus.OK.value(), value);
     }
 
+    @ApiOperation(value = "Get details of Client")
+    @GetMapping(path = "/findAllClients", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public List<ClientDTO> getAllClients() {
+        return clientService.getAllClients();
+    }
 
 
     @ApiOperation(value = "fetching client by clientId")
@@ -77,6 +81,13 @@ public class DepartmentController extends BaseController {
         return clientService.getClientById(clientId);
     }
 
+
+    @ApiOperation(value = "fetching client by clientName")
+    @GetMapping(path = "/findClientByName",produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ClientDTO getClientByName(@RequestParam String clientName) {
+
+        return clientService.getClientByName(clientName);
+    }
 
 
 }
