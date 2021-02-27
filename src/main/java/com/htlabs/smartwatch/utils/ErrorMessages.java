@@ -33,10 +33,12 @@ public class ErrorMessages {
 
     public static final String INVALID_CLIENT = "Invalid Client!";
 
-
     public static final String OPERATOR_EXIST = "Operator Already existed!" ;
 
     public static final String INVALID_LOCATION = "Location does not exist!";
 
+    public static final String DEPARTMENT_EXIST = "Department Already exist!";
+
+    public static final String INVALID_CLIENT_LOCATION = "Client Location does not exists!";
 
 }

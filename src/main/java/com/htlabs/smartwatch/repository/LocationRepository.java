@@ -14,7 +14,7 @@ import java.util.List;
 public interface LocationRepository extends JpaRepository<Location, String> {
 
     @Query(value = "SELECT * FROM location WHERE location_name LIKE %:locationName%", nativeQuery = true)
-    public List<Location> findByName(String locationName);
+    public Location findByName(String locationName);
 
     @Modifying
     @Transactional
@@ -23,4 +23,10 @@ public interface LocationRepository extends JpaRepository<Location, String> {
 
     @Query(value = "SELECT location_name FROM location WHERE location_name= :#{#locationName}", nativeQuery = true)
     public String findLocationName(String locationName);
+
+    @Query(value = "SELECT * FROM location WHERE region_id= :#{#regionId}", nativeQuery = true)
+    public List<Location> findByRegionId(String regionId);
+
+//    @Query(value = "SELECT * FROM location WHERE country_id= :#{#countryId}", nativeQuery = true)
+//    public List<Location> findByCountryId(String countryId);
 }

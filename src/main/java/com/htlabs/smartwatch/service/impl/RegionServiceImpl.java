@@ -31,7 +31,8 @@ public class RegionServiceImpl implements RegionService {
 
 
     @Override
-    public void createRegion(String countryId , String regionName) {
+    public void createRegion(String countryName, String regionName) {
+        String countryId = countryRepository.findByCountryName(countryName);
         Country country = countryRepository.findById(countryId).orElse(null);
         if(country == null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ErrorMessages.INVALID_COUNTRY);
@@ -53,7 +54,13 @@ public class RegionServiceImpl implements RegionService {
     }
 
     @Override
-    public void updateRegion(String regionId, String regionName) {
+    public void updateRegion(String regionId, String countryName, String regionName) {
+        String countryId = countryRepository.findByCountryName(countryName);
+        Country country = countryRepository.findById(countryId).orElse(null);
+        if(country == null){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ErrorMessages.INVALID_COUNTRY);
+        }
+
         RegionDetails regionDetails = regionDetailRepository.findById(regionId).orElse(null);
         if (regionDetails == null){
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_REGION);
@@ -63,6 +70,7 @@ public class RegionServiceImpl implements RegionService {
             if (regionname == null){
                 log.info("Updating Region:  {}", regionName);
                 regionDetails.setRegionName(regionName);
+                regionDetails.setCountry(country);
                 regionDetails.setCreatedAt(new Date());
                 regionDetails.setUpdatedAt(new Date());
                 regionDetailRepository.save(regionDetails);
@@ -105,5 +113,18 @@ public class RegionServiceImpl implements RegionService {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_REGION);
         }
         regionDetailRepository.deleteRegion(regionId);
+    }
+
+    @Override
+    public List<RegionDetailsDTO> getRegionByCountry(String countryName) {
+        log.info("Retrieving Region by CountryId ");
+        String countryId = countryRepository.findByCountryName(countryName);
+        Country country = countryRepository.findById(countryId).orElse(null);
+        if(country == null){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ErrorMessages.INVALID_COUNTRY);
+        }
+
+        List<RegionDetails> regionDetails = regionDetailRepository.findByCountryId(countryId);
+        return RegionConverter.getRegionDTOListFromEntityList(regionDetails);
     }
 }

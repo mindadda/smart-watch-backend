@@ -22,4 +22,10 @@ public interface RegionDetailRepository extends JpaRepository<RegionDetails,Stri
     @Transactional
     @Query(value = "DELETE FROM region where region_id = :#{#regionId}", nativeQuery = true)
     public void deleteRegion(String regionId);
+
+    @Query(value = "SELECT * FROM region WHERE country_id= :#{#countryId}", nativeQuery = true)
+    public List<RegionDetails> findByCountryId(String countryId);
+
+    @Query(value = "SELECT region_id FROM region WHERE region_name= :#{#regionName}", nativeQuery = true)
+    public String findByRegionName(String regionName);
 }

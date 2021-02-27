@@ -32,4 +32,10 @@ public class SuccessMessages {
     public static final String CLIENT_CREATED = "Client Created Successfully !!";
 
     public static final String CLIENT_UPDATED = "Client updated Successfully !!";
+
+    public static final String DEPARTMENT_CREATED = "Department %s Created Successfully !!";
+
+    public static final String DEPARTMENT_UPDATED = "Department updated Successfully !!";
+
+    public static final String DEPARTMENT_REMOVED = "Department removed Successfully !!";
 }
