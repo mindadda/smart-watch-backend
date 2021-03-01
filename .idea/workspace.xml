@@ -23,16 +23,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb9d5eff-8e8c-43ad-b047-fd730e28e8aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/dto/ClientLocationDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/dto/DepartmentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/entity/ClientLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/entity/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/entity/converter/DepartmentConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/ClientLocationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/DepartmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/DepartmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/DepartmentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/CountryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/DepartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/dto/ClientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/dto/ClientDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/entity/converter/ClientConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/entity/converter/ClientConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/ClientDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/ClientDetailRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/ClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/CountryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/LocationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/RegionDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/RegionDetailRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/LocationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/RegionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/RegionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/LocationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/LocationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/utils/ErrorMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/utils/ErrorMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/utils/SuccessMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/utils/SuccessMessages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/htlabs/smartwatch/utils/ErrorMessages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/htlabs/smartwatch/utils/ErrorMessages.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +59,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -57,6 +71,13 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Users\POOJA\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -133,70 +154,50 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1614143261513">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1614418123056">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1614143261513" />
-    <state width="1323" height="298" key="GridCell.Tab.0.bottom" timestamp="1614143173600">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614143173600" />
-    <state width="1323" height="298" key="GridCell.Tab.0.center" timestamp="1614143173599">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1614143173599" />
-    <state width="1323" height="298" key="GridCell.Tab.0.left" timestamp="1614143173599">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1614143173599" />
-    <state width="1323" height="298" key="GridCell.Tab.0.right" timestamp="1614143173600">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614143173600" />
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1613896392636">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1613896392636" />
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1614418123056" />
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1613893705626">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1613893705626" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1614051762445">
+    <state width="1323" height="249" key="GridCell.Tab.0.bottom" timestamp="1614447560064">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614051762445" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1614051762445">
+    <state width="1323" height="249" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614447560064" />
+    <state width="1323" height="249" key="GridCell.Tab.0.center" timestamp="1614447560064">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1614051762445" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1614051762445">
+    <state width="1323" height="249" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1614447560064" />
+    <state width="1323" height="249" key="GridCell.Tab.0.left" timestamp="1614447560064">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1614051762445" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1614051762445">
+    <state width="1323" height="249" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1614447560064" />
+    <state width="1323" height="249" key="GridCell.Tab.0.right" timestamp="1614447560064">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614051762445" />
-    <state width="1323" height="249" key="GridCell.Tab.1.bottom" timestamp="1613920922666">
+    <state width="1323" height="249" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614447560064" />
+    <state width="1323" height="249" key="GridCell.Tab.1.bottom" timestamp="1614447559667">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1613920922666" />
-    <state width="1323" height="249" key="GridCell.Tab.1.center" timestamp="1613920922665">
+    <state width="1323" height="249" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614447559667" />
+    <state width="1323" height="249" key="GridCell.Tab.1.center" timestamp="1614447559667">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1613920922665" />
-    <state width="1323" height="249" key="GridCell.Tab.1.left" timestamp="1613920922665">
+    <state width="1323" height="249" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1614447559667" />
+    <state width="1323" height="249" key="GridCell.Tab.1.left" timestamp="1614447559667">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1613920922665" />
-    <state width="1323" height="249" key="GridCell.Tab.1.right" timestamp="1613920922665">
+    <state width="1323" height="249" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1614447559667" />
+    <state width="1323" height="249" key="GridCell.Tab.1.right" timestamp="1614447559667">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1613920922665" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1613896622054">
+    <state width="1323" height="249" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1614447559667" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1614159902281">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1613896622054" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1614159902281" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -313,67 +314,62 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>36</line>
+          <line>37</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>35</line>
+          <line>36</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>39</line>
+          <line>40</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>40</line>
+          <line>41</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>43</line>
+          <line>44</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>41</line>
+          <line>42</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>42</line>
+          <line>43</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>44</line>
+          <line>45</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>45</line>
+          <line>46</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>46</line>
+          <line>47</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>47</line>
+          <line>48</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
-          <line>50</line>
+          <line>51</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -387,9 +383,94 @@
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/DepartmentController.java</url>
-          <line>88</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/CountryController.java</url>
+          <line>133</line>
           <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/CountryController.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/RegionServiceImpl.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
