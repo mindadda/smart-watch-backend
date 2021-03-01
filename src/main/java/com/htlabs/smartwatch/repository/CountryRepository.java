@@ -23,4 +23,6 @@ public interface CountryRepository extends JpaRepository<Country, String> {
     @Query(value = "SELECT country_name FROM country WHERE country_name= :#{#countryName}", nativeQuery = true)
     public String findCountryName(String countryName);
 
+    @Query(value = "SELECT country_id FROM country WHERE country_name= :#{#countryName}", nativeQuery = true)
+    public String findByCountryName(String countryName);
 }

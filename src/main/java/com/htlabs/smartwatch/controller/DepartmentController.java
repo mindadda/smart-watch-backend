@@ -3,6 +3,7 @@ package com.htlabs.smartwatch.controller;
 import com.htlabs.smartwatch.dto.*;
 import com.htlabs.smartwatch.exceptions.UserException;
 import com.htlabs.smartwatch.service.ClientService;
+import com.htlabs.smartwatch.service.DepartmentService;
 import com.htlabs.smartwatch.utils.ErrorMessages;
 import com.htlabs.smartwatch.utils.Roles;
 import com.htlabs.smartwatch.utils.SuccessMessages;
@@ -27,6 +28,9 @@ public class DepartmentController extends BaseController {
 
     @Autowired
     private ClientService clientService;
+
+    @Autowired
+    private DepartmentService departmentService;
 
     @ApiOperation("creating client")
     @PostMapping(path = "/createClient", produces = {MediaType.APPLICATION_JSON_VALUE})
@@ -59,7 +63,7 @@ public class DepartmentController extends BaseController {
 
 
     @ApiOperation(value = "We can delete the Client.")
-    @PostMapping(path = "/deleteClient" , produces = { MediaType.APPLICATION_JSON_VALUE })
+    @GetMapping(path = "/deleteClient" , produces = { MediaType.APPLICATION_JSON_VALUE })
     public ResponseDTO deleteClient( @RequestParam String clientId ){
 
 
@@ -89,5 +93,51 @@ public class DepartmentController extends BaseController {
         return clientService.getClientByName(clientName);
     }
 
+
+
+    @ApiOperation(value = "We can create a new Department.")
+    @PostMapping(path = "/createDepartment", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseDTO createDepartment(@RequestParam String clientId ,
+                                        @RequestParam String locationId,
+                                        @RequestParam String departmentName) {
+        departmentService.createDepartment(clientId ,locationId, departmentName);
+        return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.DEPARTMENT_CREATED, departmentName));
+    }
+
+    @ApiOperation(value = "We can update details of the Department.")
+    @PostMapping(path = "/updateDepartment" , produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseDTO updateDepartment(@RequestParam String departmentId ,
+                                     @RequestParam String departmentName,
+                                        @RequestParam(required = false) String clientId,
+                                        @RequestParam(required = false) String locationId){
+        departmentService.updateDepartment(departmentId , departmentName, clientId, locationId);
+        return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.DEPARTMENT_UPDATED, departmentName));
+    }
+
+    @ApiOperation(value = "Get details of Department")
+    @GetMapping(path = "/findAllDepartments", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public List<DepartmentDTO> getAllDepartments() {
+        return departmentService.getAllDepartments();
+    }
+
+    @ApiOperation(value = "We can find details of the Department.")
+    @GetMapping(path = "/findDepartmentById", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public DepartmentDTO getDepartmentById(@RequestParam String departmentId) {
+        return departmentService.getDepartmentById(departmentId);
+    }
+
+    @ApiOperation(value = "We can find details of the Department.")
+    @GetMapping(path = "/findDepartmentByName", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public List<DepartmentDTO> getCountryByName(@RequestParam String departmentName) {
+        return departmentService.getDepartmentByName(departmentName);
+    }
+
+    @ApiOperation(value = "Delete department countryId")
+    @GetMapping(path = "/deleteDepartment",produces ={MediaType.APPLICATION_JSON_VALUE} )
+    public ResponseDTO deleteDepartment(@RequestParam String departmentId ){
+        departmentService.deleteDepartment(departmentId);
+        return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.DEPARTMENT_REMOVED));
+
+    }
 
 }
