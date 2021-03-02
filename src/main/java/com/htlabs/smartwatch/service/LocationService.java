@@ -14,7 +14,7 @@ public interface LocationService {
 
     public LocationDTO getLocationById(String locationId);
 
-    public LocationDTO getLocationByName(String locationName);
+    public List<LocationDTO> getLocationByName(String locationName);
 
     public void deleteLocation(String locationId);
 

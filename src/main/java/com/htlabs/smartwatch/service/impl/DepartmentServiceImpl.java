@@ -38,12 +38,14 @@ public class DepartmentServiceImpl implements DepartmentService {
     private DepartmentRepository departmentRepository;
 
     @Override
-    public void createDepartment(String clientId, String locationId, String departmentName) {
+    public void createDepartment(String clientName , String locationName, String departmentName) {
+        String clientId = clientDetailRepository.findByClientName(clientName);
         ClientDetails clientDetails = clientDetailRepository.findById(clientId).orElse(null);
         if (clientDetails == null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ErrorMessages.INVALID_CLIENT);
         }
 
+        String locationId = locationRepository.findLocationName(locationName);
         Location location = locationRepository.findById(locationId).orElse(null);
         if (location == null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST , ErrorMessages.INVALID_LOCATION);
@@ -80,7 +82,8 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public void updateDepartment(String departmentId, String departmentName, String clientId, String locationId) {
+    public void updateDepartment(String departmentId, String departmentName, String clientName, String locationName) {
+
 
     }
 

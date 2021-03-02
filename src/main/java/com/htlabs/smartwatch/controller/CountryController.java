@@ -209,7 +209,7 @@ public class CountryController extends BaseController{
 
     @ApiOperation(value = "We can find details of the Location.")
     @GetMapping(path = "/findLocationByName", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public LocationDTO getLocationByName(@RequestParam String locationName) {
+    public List<LocationDTO> getLocationByName(@RequestParam String locationName) {
         return locationService.getLocationByName(locationName);
     }
 
