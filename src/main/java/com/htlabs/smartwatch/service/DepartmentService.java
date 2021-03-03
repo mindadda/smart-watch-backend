@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface DepartmentService {
     
-    public void createDepartment(String clientId, String locationId, String departmentName);
+    public void createDepartment(String clientName , String locationName, String departmentName);
 
-    public void updateDepartment(String departmentId, String departmentName, String clientId, String locationId);
+    public void updateDepartment(String departmentId, String departmentName, String clientName, String locationName);
 
     public List<DepartmentDTO> getAllDepartments();
 

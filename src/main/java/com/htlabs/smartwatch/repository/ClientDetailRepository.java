@@ -41,4 +41,7 @@ public interface ClientDetailRepository extends JpaRepository<ClientDetails,Stri
 
     @Query(value = "SELECT * FROM client WHERE client_name LIKE %:clientName%", nativeQuery = true)
     public ClientDetails findClientName(String clientName);
+
+    @Query(value = "SELECT client_id FROM client WHERE client_name= :#{#clientName}", nativeQuery = true)
+    public String findByClientName(String clientName);
 }

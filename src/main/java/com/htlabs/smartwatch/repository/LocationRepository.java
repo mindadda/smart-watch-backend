@@ -14,7 +14,7 @@ import java.util.List;
 public interface LocationRepository extends JpaRepository<Location, String> {
 
     @Query(value = "SELECT * FROM location WHERE location_name LIKE %:locationName%", nativeQuery = true)
-    public Location findByName(String locationName);
+    public List<Location> findByName(String locationName);
 
     @Modifying
     @Transactional

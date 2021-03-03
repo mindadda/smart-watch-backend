@@ -101,12 +101,12 @@ public class LocationServiceImpl implements LocationService {
     }
 
     @Override
-    public LocationDTO getLocationByName(String locationName) {
-        Location locations = locationRepository.findByName(locationName);
+    public List<LocationDTO> getLocationByName(String locationName) {
+        List<Location> locations = locationRepository.findByName(locationName);
         if (locations == null){
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_LOCATION);
         }
-        return LocationConverter.getLocationDtoFromEntity(locations);
+        return LocationConverter.getLocationDTOListFromEntityList(locations);
     }
 
     @Override

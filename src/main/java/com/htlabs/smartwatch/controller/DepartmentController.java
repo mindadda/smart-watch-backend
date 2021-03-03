@@ -35,10 +35,8 @@ public class DepartmentController extends BaseController {
     @ApiOperation("creating client")
     @PostMapping(path = "/createClient", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseClientDTO createClient(@RequestParam String name,
-
-                                              @RequestParam String phoneNo,
-                                              @RequestParam String address) {
-
+                                          @RequestParam String phoneNo,
+                                          @RequestParam String address) {
 
         ClientDTO dto=new ClientDTO();
         dto.setClientName(name);
@@ -97,10 +95,10 @@ public class DepartmentController extends BaseController {
 
     @ApiOperation(value = "We can create a new Department.")
     @PostMapping(path = "/createDepartment", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public ResponseDTO createDepartment(@RequestParam String clientId ,
-                                        @RequestParam String locationId,
+    public ResponseDTO createDepartment(@RequestParam String clientName ,
+                                        @RequestParam String locationName,
                                         @RequestParam String departmentName) {
-        departmentService.createDepartment(clientId ,locationId, departmentName);
+        departmentService.createDepartment(clientName ,locationName, departmentName);
         return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.DEPARTMENT_CREATED, departmentName));
     }
 
@@ -108,9 +106,9 @@ public class DepartmentController extends BaseController {
     @PostMapping(path = "/updateDepartment" , produces = { MediaType.APPLICATION_JSON_VALUE })
     public ResponseDTO updateDepartment(@RequestParam String departmentId ,
                                      @RequestParam String departmentName,
-                                        @RequestParam(required = false) String clientId,
-                                        @RequestParam(required = false) String locationId){
-        departmentService.updateDepartment(departmentId , departmentName, clientId, locationId);
+                                        @RequestParam(required = false) String clientName,
+                                        @RequestParam(required = false) String locationName){
+        departmentService.updateDepartment(departmentId , departmentName, clientName, locationName);
         return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.DEPARTMENT_UPDATED, departmentName));
     }
 
