@@ -43,7 +43,7 @@ public class CountryServiceImpl implements CountryService {
     public void updateCountry(String countryId, String countryName) {
         Country country = countryRepository.findById(countryId).orElse(null);
         if (country == null){
-           throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_COUNTRY);
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_COUNTRY);
         }
         else {
             String countryname = countryRepository.findCountryName(countryName);

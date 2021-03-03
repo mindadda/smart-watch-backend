@@ -8,7 +8,7 @@ public interface DepartmentService {
     
     public void createDepartment(String clientName , String locationName, String departmentName);
 
-    public void updateDepartment(String departmentId, String departmentName, String clientName, String locationName);
+    public void updateDepartment(String departmentId, String departmentName);
 
     public List<DepartmentDTO> getAllDepartments();
 

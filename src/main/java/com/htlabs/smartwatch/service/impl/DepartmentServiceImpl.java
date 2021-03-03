@@ -2,15 +2,14 @@ package com.htlabs.smartwatch.service.impl;
 
 import com.htlabs.smartwatch.dto.DepartmentDTO;
 import com.htlabs.smartwatch.entity.*;
-import com.htlabs.smartwatch.entity.converter.CountryConverter;
 import com.htlabs.smartwatch.entity.converter.DepartmentConverter;
+import com.htlabs.smartwatch.entity.converter.LocationConverter;
 import com.htlabs.smartwatch.repository.ClientDetailRepository;
 import com.htlabs.smartwatch.repository.ClientLocationRepository;
 import com.htlabs.smartwatch.repository.DepartmentRepository;
 import com.htlabs.smartwatch.repository.LocationRepository;
 import com.htlabs.smartwatch.service.DepartmentService;
 import com.htlabs.smartwatch.utils.ErrorMessages;
-import com.mysql.cj.xdevapi.Client;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,7 +44,7 @@ public class DepartmentServiceImpl implements DepartmentService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ErrorMessages.INVALID_CLIENT);
         }
 
-        String locationId = locationRepository.findLocationName(locationName);
+        String locationId = locationRepository.findByLocationName(locationName);
         Location location = locationRepository.findById(locationId).orElse(null);
         if (location == null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST , ErrorMessages.INVALID_LOCATION);
@@ -82,8 +81,36 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public void updateDepartment(String departmentId, String departmentName, String clientName, String locationName) {
+    public void updateDepartment(String departmentId, String departmentName) {
+//        String clientId = clientDetailRepository.findByClientName(clientName);
+//        ClientDetails clientDetails = clientDetailRepository.findById(clientId).orElse(null);
+//        if (clientDetails == null){
+//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ErrorMessages.INVALID_CLIENT);
+//        }
+//
+//        String locationId = locationRepository.findByLocationName(locationName);
+//        Location location = locationRepository.findById(locationId).orElse(null);
+//        if (location == null){
+//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST , ErrorMessages.INVALID_LOCATION);
+//        }
 
+        Department department = departmentRepository.findById(departmentId).orElse(null);
+        if (department == null){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_DEPARTMENT);
+        }
+        else {
+            String departmentname = departmentRepository.findDepartmentName(departmentName);
+            if (departmentname == null){
+                log.info("Updating Department:  {}", departmentName);
+                department.setDepartmentName(departmentName);
+                department.setUpdatedAt(new Date());
+                departmentRepository.save(department);
+            }
+            else{
+                throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.DEPARTMENT_EXIST);
+            }
+
+        }
 
     }
 
@@ -96,16 +123,27 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public DepartmentDTO getDepartmentById(String departmentId) {
-        return null;
+        log.info("Retrieving the Department Details : {}", departmentId);
+        Department department = departmentRepository.findById(departmentId).orElse(null);
+        return DepartmentConverter.getDepartmentDtoFromEntity(department);
     }
 
     @Override
     public List<DepartmentDTO> getDepartmentByName(String departmentName) {
-        return null;
+        List<Department> departments = departmentRepository.findByName(departmentName);
+        if (departments == null){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_DEPARTMENT);
+        }
+        return DepartmentConverter.getDepartmentDTOListFromEntityList(departments);
     }
 
     @Override
     public void deleteDepartment(String departmentId) {
-
+        log.info("Deleting Department : {}", departmentId);
+        Department department = departmentRepository.findById(departmentId).orElse(null);
+        if (department == null){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, ErrorMessages.INVALID_DEPARTMENT);
+        }
+        departmentRepository.deleteDepartment(departmentId);
     }
 }
