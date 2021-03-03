@@ -27,6 +27,9 @@ public interface LocationRepository extends JpaRepository<Location, String> {
     @Query(value = "SELECT * FROM location WHERE region_id= :#{#regionId}", nativeQuery = true)
     public List<Location> findByRegionId(String regionId);
 
+    @Query(value = "SELECT location_id FROM location WHERE location_name= :#{#locationName}", nativeQuery = true)
+    public String findByLocationName(String locationName);
+
 //    @Query(value = "SELECT * FROM location WHERE country_id= :#{#countryId}", nativeQuery = true)
 //    public List<Location> findByCountryId(String countryId);
 }

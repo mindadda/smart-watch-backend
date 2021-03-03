@@ -105,10 +105,8 @@ public class DepartmentController extends BaseController {
     @ApiOperation(value = "We can update details of the Department.")
     @PostMapping(path = "/updateDepartment" , produces = { MediaType.APPLICATION_JSON_VALUE })
     public ResponseDTO updateDepartment(@RequestParam String departmentId ,
-                                     @RequestParam String departmentName,
-                                        @RequestParam(required = false) String clientName,
-                                        @RequestParam(required = false) String locationName){
-        departmentService.updateDepartment(departmentId , departmentName, clientName, locationName);
+                                     @RequestParam String departmentName){
+        departmentService.updateDepartment(departmentId , departmentName);
         return new ResponseDTO(HttpStatus.OK.value(), String.format(SuccessMessages.DEPARTMENT_UPDATED, departmentName));
     }
 

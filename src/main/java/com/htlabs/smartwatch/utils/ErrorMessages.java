@@ -41,4 +41,6 @@ public class ErrorMessages {
 
     public static final String INVALID_CLIENT_LOCATION = "Client Location does not exists!";
 
+    public static final String INVALID_DEPARTMENT = "Department is not present !!";
+
 }

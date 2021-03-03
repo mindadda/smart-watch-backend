@@ -1,11 +1,9 @@
 package com.htlabs.smartwatch.service.impl;
 
 import com.htlabs.smartwatch.dto.LocationDTO;
-import com.htlabs.smartwatch.entity.Country;
 import com.htlabs.smartwatch.entity.Location;
 import com.htlabs.smartwatch.entity.RegionDetails;
 import com.htlabs.smartwatch.entity.converter.LocationConverter;
-import com.htlabs.smartwatch.entity.converter.RegionConverter;
 import com.htlabs.smartwatch.repository.CountryRepository;
 import com.htlabs.smartwatch.repository.LocationRepository;
 import com.htlabs.smartwatch.repository.RegionDetailRepository;
