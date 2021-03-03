@@ -24,14 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bb9d5eff-8e8c-43ad-b047-fd730e28e8aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/CountryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/controller/DepartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/ClientDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/ClientDetailRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/repository/LocationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/DepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/LocationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/DepartmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/LocationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/htlabs/smartwatch/service/impl/LocationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +50,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Users\POOJA\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -75,7 +61,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../smart_Watch/backend_smartwatch/smart-watch-backend" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -137,52 +123,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1614418123056">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1614418123056" />
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1613893705626">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1613893705626" />
-    <state width="1323" height="298" key="GridCell.Tab.0.bottom" timestamp="1614699623726">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614699623726" />
-    <state width="1323" height="298" key="GridCell.Tab.0.center" timestamp="1614699623726">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1614699623726" />
-    <state width="1323" height="298" key="GridCell.Tab.0.left" timestamp="1614699623726">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1614699623726" />
-    <state width="1323" height="298" key="GridCell.Tab.0.right" timestamp="1614699623726">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="298" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614699623726" />
-    <state width="1323" height="249" key="GridCell.Tab.1.bottom" timestamp="1614448372505">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614448372505" />
-    <state width="1323" height="249" key="GridCell.Tab.1.center" timestamp="1614448372505">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1614448372505" />
-    <state width="1323" height="249" key="GridCell.Tab.1.left" timestamp="1614448372505">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1614448372505" />
-    <state width="1323" height="249" key="GridCell.Tab.1.right" timestamp="1614448372505">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="249" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1614448372505" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1614159902281">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1614159902281" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

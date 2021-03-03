@@ -54,4 +54,4 @@ passwordResetMail:
   body: 'To complete the password reset process, please click here: '
 
 configKeys:
-  versionKey: 'MINIMUM_REQUIRED_VERSION'
+  versionKey: 'MINIMUM_REQUIRED_VERSION
